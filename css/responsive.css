@@ -22,7 +22,7 @@
   :root {
     --rail: 84px;
     --header-h: 84px;
-    --fs-hero: clamp(3.25rem, 7.4vw, 5.5rem);
+    --fs-hero: clamp(2rem, 4.2vw, 3.25rem);
   }
 
   .nav { gap: 1rem; }
@@ -118,7 +118,7 @@
 @media (max-width: 860px) {
   :root {
     --section-y: clamp(4rem, 9vh, 6rem);
-    --fs-hero: clamp(2.75rem, 10vw, 4.25rem);
+    --fs-hero: clamp(1.875rem, 5.2vw, 2.75rem);
   }
 
   .intro__cols { grid-template-columns: 1fr; }
@@ -137,7 +137,7 @@
   .timeline__row { grid-template-columns: 80px 1fr; }
 
   .app-full { height: clamp(360px, 62svh, 520px); }
-  .app-type { font-size: clamp(2.5rem, 13vw, 5rem); }
+  .app-type { font-size: clamp(1.625rem, 6.4vw, 2.5rem); }
 
   .grid-12 { grid-template-columns: repeat(6, 1fr); }
   .col-3, .col-4, .col-5 { grid-column: span 6 / span 6; }
@@ -148,9 +148,9 @@
 /* --------------------------------------------------- ≤ 640px — mobile */
 @media (max-width: 640px) {
   :root {
-    --fs-hero: clamp(2.5rem, 11.5vw, 3.5rem);
-    --fs-display: clamp(2rem, 8.5vw, 2.75rem);
-    --fs-headline: clamp(1.65rem, 7vw, 2.25rem);
+    --fs-hero: clamp(1.75rem, 7.4vw, 2.375rem);
+    --fs-display: clamp(1.5rem, 6vw, 1.875rem);
+    --fs-headline: clamp(1.3rem, 5.2vw, 1.625rem);
     --gutter: 1.25rem;
     --grid-gap: 1rem;
   }
@@ -173,7 +173,7 @@
   .project-detail__facts { grid-template-columns: 1fr; gap: 1.1rem; }
   .footer__nav { grid-template-columns: 1fr; }
 
-  .statement { min-height: 74svh; }
+  .statement { min-height: 60svh; }
   .statement__quote { max-width: none; }
 
   .stages__grid { grid-template-columns: 36px minmax(0, 1fr); }
@@ -199,9 +199,9 @@
 
 /* ---------------------------------------------- ≤ 420px — small mobile */
 @media (max-width: 420px) {
-  :root { --fs-hero: 2.25rem; }
-  .mobile-nav__link { font-size: 1.5rem; }
-  .footer__wordmark { font-size: 3rem; }
+  :root { --fs-hero: 1.625rem; }
+  .mobile-nav__link { font-size: 1.25rem; }
+  .footer__wordmark { font-size: 2.5rem; }
   .hero__nav { gap: 1rem; }
   .hero__btn { letter-spacing: 0.2em; }
 }
@@ -232,4 +232,35 @@
   .rail, .header, .mobile-nav, .cursor, .cursor-ring, .grain,
   .loader, .curtain, .scroll-progress, .hero__nav { display: none !important; }
   body { background: #fff; color: #000; padding-left: 0; }
+}
+
+/* ------------------------------------------------ Reduced motion layouts
+   Kept last so these always win over the breakpoint rules above. */
+@media (prefers-reduced-motion: reduce) {
+  /* The pinned sections are driven by scroll. With motion switched off there
+     is no scrubbing, so they unfold into plain, fully readable layouts —
+     no content is only reachable through an animation. */
+  .stages__viewport { min-height: 0; padding-block: var(--section-y); display: block; }
+  .stages__grid { grid-template-columns: 1fr; }
+  .stages__rail { display: none; }
+  .stages__panels { position: static; min-height: 0; display: grid; gap: clamp(2rem, 5vh, 3.5rem); }
+  .stage-panel { position: static; opacity: 1; visibility: visible; }
+  .stages__media { position: static; aspect-ratio: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .stages__media::after { display: none; }
+  .stages__media figure { position: static; clip-path: none; aspect-ratio: 4 / 5; }
+  .stages__texture { display: none; }
+
+  .apps-pin__viewport { min-height: 0; padding-block: var(--section-y); display: block; }
+  .apps-pin__grid { grid-template-columns: 1fr; }
+  .apps-pin__item { color: var(--white); }
+  .apps-pin__item em { color: var(--accent); }
+  .apps-pin__media { position: static; aspect-ratio: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .apps-pin__media figure { position: static; opacity: 1; clip-path: none; aspect-ratio: 4 / 3; }
+  .apps-pin__caption { display: none; }
+
+  .projects-h { height: auto; padding-block: var(--section-y); }
+  .projects-h__viewport { height: auto; display: block; padding-top: 0; overflow-x: auto; }
+  .projects-h__head { position: static; padding-top: 0; margin-bottom: 2rem; pointer-events: auto; }
+  .projects-h__bar { display: none; }
+  .projects-h__track { padding-bottom: 1rem; }
 }
