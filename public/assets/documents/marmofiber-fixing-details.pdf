@@ -1,0 +1,36 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 294 >>
+stream
+BT /F1 20 Tf 60 760 Td (MarmoFiber) Tj ET
+BT /F1 14 Tf 60 735 Td (Fixing Details - PLACEHOLDER) Tj ET
+0.7 0.33 0.21 RG 60 720 m 300 720 l S
+BT /F1 10 Tf 60 690 Td (This document is a placeholder.) Tj ET
+BT /F1 10 Tf 60 674 Td (Replace with the approved MarmoFiber fixing detail drawings.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000586 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+656
+%%EOF

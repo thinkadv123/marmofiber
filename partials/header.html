@@ -1,0 +1,64 @@
+<!--
+  Shared header + full-screen mobile navigation.
+  The active state is applied from <body data-page="…"> at runtime.
+-->
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="logo" href="index.html" aria-label="MarmoFiber — home">
+      <img src="assets/logo/marmo_fiber_main_light.png" alt="MarmoFiber" width="240" height="30" />
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" data-page="home" href="index.html">Home</a>
+      <a class="nav__link" data-page="material" href="material.html">The Material</a>
+      <a class="nav__link" data-page="collections" href="collections.html">Collections</a>
+      <a class="nav__link" data-page="applications" href="applications.html">Applications</a>
+      <a class="nav__link" data-page="projects" href="projects.html">Projects</a>
+      <a class="nav__link" data-page="story" href="story.html">Our Story</a>
+      <a class="nav__link" data-page="technical" href="technical.html">Technical</a>
+      <a class="nav__link" data-page="contact" href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header__actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" class="is-active" lang="en">EN</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" lang="ar">AR</button>
+      </div>
+
+      <a class="btn btn--sm" href="contact.html?enquiry=sample" data-magnetic="0.24">
+        Request a Sample
+        <svg viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor"/></svg>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <ul class="mobile-nav__list">
+    <li class="mobile-nav__item"><a class="mobile-nav__link" data-page="home" href="index.html"><em>01</em>Home</a></li>
+    <li class="mobile-nav__item"><a class="mobile-nav__link" data-page="material" href="material.html"><em>02</em>The Material</a></li>
+    <li class="mobile-nav__item"><a class="mobile-nav__link" data-page="collections" href="collections.html"><em>03</em>Collections</a></li>
+    <li class="mobile-nav__item"><a class="mobile-nav__link" data-page="applications" href="applications.html"><em>04</em>Applications</a></li>
+    <li class="mobile-nav__item"><a class="mobile-nav__link" data-page="projects" href="projects.html"><em>05</em>Projects</a></li>
+    <li class="mobile-nav__item"><a class="mobile-nav__link" data-page="story" href="story.html"><em>06</em>Our Story</a></li>
+    <li class="mobile-nav__item"><a class="mobile-nav__link" data-page="technical" href="technical.html"><em>07</em>Technical</a></li>
+    <li class="mobile-nav__item"><a class="mobile-nav__link" data-page="contact" href="contact.html"><em>08</em>Contact</a></li>
+  </ul>
+
+  <div class="mobile-nav__foot">
+    <a href="mailto:hello@marmofiber.com">hello@marmofiber.com</a>
+    <a href="tel:+20000000000">+20 000 000 0000</a>
+    <p>Cairo, Egypt — Deko Egypt manufacturing group.</p>
+    <div class="social">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
+  </div>
+</div>

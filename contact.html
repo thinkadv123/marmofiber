@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include partials/head-common.html -->
+
+  <title>Contact | Request a MarmoFiber Sample or Start a Project</title>
+  <meta name="description" content="Request a MarmoFiber sample, start a project, or ask for technical support. Tell us the application, the finish and the stage your project is at." />
+  <link rel="canonical" href="https://www.marmofiber.com/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MarmoFiber" />
+  <meta property="og:title" content="Contact | MarmoFiber" />
+  <meta property="og:description" content="Bring your next surface to life — samples, project enquiries and technical support." />
+  <meta property="og:url" content="https://www.marmofiber.com/contact.html" />
+  <meta property="og:image" content="https://www.marmofiber.com/assets/images/page-contact.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact | MarmoFiber" />
+  <meta name="twitter:description" content="Samples, project enquiries and technical support." />
+  <meta name="twitter:image" content="https://www.marmofiber.com/assets/images/page-contact.webp" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.marmofiber.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.marmofiber.com/contact.html" }
+    ]
+  }
+  </script>
+
+  <script type="module" src="/js/main.js"></script>
+</head>
+
+<body data-page="contact" data-page-number="08" data-page-label="Contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- @include partials/chrome.html -->
+  <!-- @include partials/rail.html -->
+  <!-- @include partials/header.html -->
+
+  <main id="main">
+
+    <!-- ======================================================== PAGE HERO -->
+    <section class="page-hero full-bleed">
+      <div class="page-hero__media">
+        <img class="art-img" src="assets/images/page-contact.webp" alt="Clean concrete corner meeting in soft daylight" width="2000" height="1125" fetchpriority="high" decoding="async" />
+      </div>
+      <div class="scrim"></div>
+
+      <div class="page-hero__inner shell">
+        <nav class="page-hero__crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span>
+        </nav>
+        <h1 class="page-hero__title" data-split>
+          <span class="line"><span>Bring Your Next</span></span>
+          <span class="line"><span>Surface to Life.</span></span>
+        </h1>
+        <p class="page-hero__intro" data-reveal data-reveal-delay="0.5">
+          Whether you are selecting a finish, studying a façade, developing a custom element, requesting technical
+          information, or preparing a material specification, our team is ready to support your project.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================== ENQUIRY TYPES -->
+    <section class="section section--tight">
+      <div class="shell">
+        <p class="section-number mb-3" data-reveal>01 — How can we help?</p>
+
+        <div class="enquiry-grid" data-reveal>
+          <button class="enquiry-card" type="button" data-enquiry="sample" aria-pressed="true">
+            <span class="enquiry-card__num">01</span>
+            <span class="enquiry-card__title">Request a Sample</span>
+            <span class="enquiry-card__desc">Hold the finish before you specify it. Tell us which collection you are considering.</span>
+          </button>
+          <button class="enquiry-card" type="button" data-enquiry="project" aria-pressed="false">
+            <span class="enquiry-card__num">02</span>
+            <span class="enquiry-card__title">Start a Project</span>
+            <span class="enquiry-card__desc">Share the elevation, interior or element and the stage the project has reached.</span>
+          </button>
+          <button class="enquiry-card" type="button" data-enquiry="technical" aria-pressed="false">
+            <span class="enquiry-card__num">03</span>
+            <span class="enquiry-card__title">Technical Support</span>
+            <span class="enquiry-card__desc">Data, fixing, interfaces and specification questions from design and site teams.</span>
+          </button>
+          <button class="enquiry-card" type="button" data-enquiry="general" aria-pressed="false">
+            <span class="enquiry-card__num">04</span>
+            <span class="enquiry-card__title">General Enquiry</span>
+            <span class="enquiry-card__desc">Partnerships, distribution, press, or anything that does not fit the boxes above.</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= FORM -->
+    <section class="section section--tight">
+      <div class="shell">
+        <div class="grid-12">
+          <div class="col-7">
+            <p class="section-number" data-reveal>02 — Project Details</p>
+            <h2 class="h-2 mt-3 mb-6" data-reveal data-reveal-delay="0.05">Tell us about the project.</h2>
+
+            <!--
+              STATIC FORM SETUP
+              ─────────────────
+              1. Formspree (default path): open js/main.js and set FORM_ENDPOINT
+                 to your form URL, e.g. 'https://formspree.io/f/xxxxxxxx'.
+              2. Netlify Forms: add  data-netlify="true"  and a hidden
+                 <input type="hidden" name="form-name" value="enquiry">  to this
+                 <form>, then remove the fetch() branch in js/main.js.
+              3. No backend at all: leave FORM_ENDPOINT empty — the form composes
+                 a prefilled mailto: to MAIL_FALLBACK instead.
+            -->
+            <form id="enquiry-form" novalidate>
+              <input type="hidden" id="enquiry-type" name="enquiry-type" value="sample" />
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="name" name="name" autocomplete="name" required placeholder="Your name" />
+                </div>
+                <div class="field">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company" autocomplete="organization" placeholder="Practice, contractor or developer" />
+                </div>
+
+                <div class="field">
+                  <label for="role">Job title</label>
+                  <input type="text" id="role" name="role" autocomplete="organization-title" placeholder="Architect, specifier, procurement…" />
+                </div>
+                <div class="field">
+                  <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@practice.com" />
+                </div>
+
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+20 …" />
+                </div>
+                <div class="field">
+                  <label for="country">Country</label>
+                  <input type="text" id="country" name="country" autocomplete="country-name" placeholder="Country" />
+                </div>
+
+                <div class="field">
+                  <label for="city">City</label>
+                  <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="City" />
+                </div>
+                <div class="field">
+                  <label for="project-name">Project name</label>
+                  <input type="text" id="project-name" name="project-name" placeholder="Internal reference is fine" />
+                </div>
+
+                <div class="field">
+                  <label for="project-location">Project location</label>
+                  <input type="text" id="project-location" name="project-location" placeholder="City / district" />
+                </div>
+                <div class="field">
+                  <label for="project-type">Project type</label>
+                  <select id="project-type" name="project-type">
+                    <option value="">Select…</option>
+                    <option>Residential</option>
+                    <option>Commercial</option>
+                    <option>Hospitality</option>
+                    <option>Retail</option>
+                    <option>Cultural / Public</option>
+                    <option>Mixed use</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="application">Intended application</label>
+                  <select id="application" name="application">
+                    <option value="">Select…</option>
+                    <option>Building façade</option>
+                    <option>Exterior wall cladding</option>
+                    <option>Interior feature wall</option>
+                    <option>Entrance / reception</option>
+                    <option>Retail or hospitality interior</option>
+                    <option>Custom architectural element</option>
+                    <option>Not decided yet</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="area">Approximate area</label>
+                  <input type="text" id="area" name="area" placeholder="e.g. 400 m² (approximate is fine)" />
+                </div>
+
+                <div class="field">
+                  <label for="collection">Required collection or finish</label>
+                  <input type="text" id="collection" name="collection" placeholder="e.g. Mineral Stone — Creamy Beige" />
+                </div>
+                <div class="field">
+                  <label for="stage">Current project stage</label>
+                  <select id="stage" name="stage">
+                    <option value="">Select…</option>
+                    <option>Concept design</option>
+                    <option>Schematic design</option>
+                    <option>Detailed design</option>
+                    <option>Tender</option>
+                    <option>Under construction</option>
+                    <option>Research only</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="timeline">Expected timeline</label>
+                  <select id="timeline" name="timeline">
+                    <option value="">Select…</option>
+                    <option>Within 1 month</option>
+                    <option>1–3 months</option>
+                    <option>3–6 months</option>
+                    <option>6–12 months</option>
+                    <option>Not yet defined</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="upload">Attach a drawing or reference</label>
+                  <input type="file" id="upload" name="upload" accept=".pdf,.jpg,.jpeg,.png,.dwg,.zip" />
+                </div>
+
+                <div class="field field--full">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us what the surface has to do."></textarea>
+                </div>
+
+                <div class="field field--full">
+                  <label id="contact-pref-label">Preferred contact method</label>
+                  <div class="radio-row" role="radiogroup" aria-labelledby="contact-pref-label">
+                    <label class="radio-chip"><input type="radio" name="contact-method" value="Email" checked /><span>Email</span></label>
+                    <label class="radio-chip"><input type="radio" name="contact-method" value="Phone" /><span>Phone</span></label>
+                    <label class="radio-chip"><input type="radio" name="contact-method" value="WhatsApp" /><span>WhatsApp</span></label>
+                    <label class="radio-chip"><input type="radio" name="contact-method" value="In-person meeting" /><span>Meeting</span></label>
+                  </div>
+                </div>
+              </div>
+
+              <p class="form-status" role="status" aria-live="polite"></p>
+
+              <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center">
+                <button class="btn btn--accent" type="submit" data-magnetic="0.2">
+                  Send Enquiry
+                  <svg viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor"/></svg>
+                </button>
+                <p class="form-note" style="max-width:38ch;margin:0">We use these details only to respond to your enquiry.</p>
+              </div>
+            </form>
+          </div>
+
+          <!-- ------------------------------------------------- Contact info -->
+          <div class="col-4 start-9">
+            <div class="contact-info">
+              <div class="contact-info__block">
+                <h3>Enquiries</h3>
+                <a href="mailto:hello@marmofiber.com">hello@marmofiber.com</a>
+                <a href="tel:+20000000000">+20 000 000 0000</a>
+                <!-- TODO: confirm the published email and phone number -->
+              </div>
+
+              <div class="contact-info__block">
+                <h3>Studio &amp; Production</h3>
+                <p>Deko Egypt for Modern Construction<br />Cairo, Egypt</p>
+              </div>
+
+              <div class="contact-info__block">
+                <h3>Office Hours</h3>
+                <p>Sunday – Thursday<br />09:00 – 17:00 (EET)</p>
+              </div>
+
+              <div class="contact-info__block">
+                <h3>Follow</h3>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== MAP -->
+    <section class="section section--tight">
+      <div class="shell">
+        <p class="section-number mb-3" data-reveal>03 — Find Us</p>
+        <!-- Replace with an embedded map (or a static map image) once the
+             published address is confirmed. -->
+        <div class="map-placeholder" data-reveal>
+          <span class="map-placeholder__pin">
+            <i aria-hidden="true"></i>
+            <span>MarmoFiber — Cairo</span>
+            <small>Exact address published on confirmation</small>
+          </span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- @include partials/footer.html -->
+</body>
+</html>

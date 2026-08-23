@@ -1,0 +1,25 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#090909" />
+<meta name="author" content="MarmoFiber" />
+
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/logo/marmo_fiber_logo_center.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Adds the `js` class before first paint so animated elements never flash.
+     The timeout is a safety net: if the bundle fails, content still shows. -->
+<script>
+  document.documentElement.classList.add('js')
+  setTimeout(function () {
+    if (!document.documentElement.dataset.mfReady) {
+      document.documentElement.classList.remove('js')
+    }
+  }, 4000)
+</script>
