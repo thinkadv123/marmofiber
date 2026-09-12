@@ -49,7 +49,8 @@ Swiper, Lenis. No framework, no backend, no build-time content system.
 │   ├── sliders.js        Swiper instances with custom GSAP transitions
 │   └── page-transitions.js  loader + curtain between pages
 ├── assets/
-│   ├── images/           architectural photography (placeholders)
+│   ├── images/           hero and section photography
+│   ├── projects/         five images per built project (thumb + 01-04)
 │   ├── finishes/         web-ready finish swatches used on the site
 │   ├── products/         original client swatch files (source, not shipped)
 │   ├── certificates/     Deko Egypt management-system certificates
@@ -93,12 +94,20 @@ Everything below is plain markup — no JavaScript changes required.
 | What | Where |
 | --- | --- |
 | Finishes (name, code, description, image) | `collections.html` — `data-*` on each `<article class="finish-card">`; these feed both the card and the detail modal |
-| Projects (copy, gallery, metadata) | `projects.html` — `data-*` on each `<a class="project-tile">`; these feed the detail overlay |
+| Projects (copy, gallery, metadata) | `projects.html` — `data-*` on each `<a class="project-tile">`; these feed the detail overlay. Images live in `assets/projects/<slug>/` as `thumb.webp` + `01`–`04.webp` |
 | Homepage hero slides | `index.html` — each `<article class="hero__slide">` |
 | Application sections | `applications.html` |
 | Timeline entries | `story.html` — copy one `.timeline-v__item` |
 | Downloads | `public/assets/documents/` — replace the PDFs, keep the filenames |
 | Contact details, social links, legal lines | `partials/footer.html`, `partials/header.html`, `contact.html` |
+
+### A note on `data-*` image paths
+
+Vite rewrites `src` and `href` in HTML, but not paths stored in `data-*`
+attributes. The finish modal and the project overlay load their images from
+`data-image` / `data-gallery`, so `js/main.js` maps those paths to the built
+(hashed) URLs through `import.meta.glob`. If you add a new folder of images that
+is loaded this way, add it to the `ASSET_URLS` globs at the top of `main.js`.
 
 ### Reusable behaviours
 
@@ -136,15 +145,22 @@ preselects the enquiry type and prefills the finish.
 
 ## Placeholders to replace before launch
 
-- **Architectural photography** in `assets/images/` — sourced from Unsplash as
-  placeholders. Filenames describe their role (`app-facade.webp`,
-  `project-03-hospitality.webp`) so replacements drop straight in.
+- **Section photography** in `assets/images/` — the four homepage hero slides
+  and the projects page hero are real MarmoFiber work. The remaining material,
+  application and detail shots are still Unsplash placeholders; filenames
+  describe their role (`app-facade.webp`, `stage-02-fiber.webp`) so
+  replacements drop straight in.
 - **Chairman portrait** — `assets/images/portrait-chairman.webp` is an abstract
   architectural stand-in. Marked with a `TODO` comment on both pages that use it.
 - **Technical PDFs** in `public/assets/documents/` — every file is a marked
   placeholder. See the README in that folder.
-- **Project records** in `projects.html` — representative placeholders. No real
-  clients, awards, figures or performance data are stated anywhere on the site.
+- **Project locations** — five records show only "Egypt" because the city is not
+  yet confirmed: Arab African Bank, Al Aly Al Azaeem Mosque, El Mo'oz Mosque,
+  Al Marasem, Medicom. There is a `TODO` comment above the grid listing them.
+- **Project copy** — written from the project photography, describing the visible
+  architectural work. No client briefs, dates, areas, awards or performance
+  figures are stated anywhere on the site. Swap in approved case-study copy when
+  it is available.
 - **Domain** — canonical and Open Graph URLs use `https://www.marmofiber.com/`.
   Search for `marmofiber.com` and update once the domain is confirmed.
 - **Contact details** — email and phone are placeholders (`TODO` comments in

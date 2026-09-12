@@ -1,0 +1,112 @@
+{
+ "arab-african-bank": {
+  "folder": "Arab African Bank",
+  "thumb": 10,
+  "gallery": [
+   12,
+   7,
+   13,
+   8
+  ]
+ },
+ "hadayek-october-metro-station": {
+  "folder": "Hadayek October Metro Station",
+  "thumb": 8,
+  "gallery": [
+   3,
+   1,
+   6,
+   10
+  ]
+ },
+ "suez-hospital": {
+  "folder": "Suez Hospital",
+  "thumb": 1,
+  "gallery": [
+   5,
+   4,
+   0,
+   3
+  ]
+ },
+ "al-aly-al-azaeem-mosque": {
+  "folder": "Al Aly Al Azaeem Mosque",
+  "thumb": 5,
+  "gallery": [
+   3,
+   26,
+   22,
+   28
+  ]
+ },
+ "el-moez-mosque": {
+  "folder": "El Mo'oz Mosque",
+  "thumb": 11,
+  "gallery": [
+   1,
+   12,
+   19,
+   8
+  ]
+ },
+ "al-diyafah-palace": {
+  "folder": "Al-Diyafah Palace -  Sudan",
+  "thumb": 3,
+  "gallery": [
+   0,
+   4,
+   5,
+   2
+  ]
+ },
+ "al-marasem": {
+  "folder": "Al Marasem",
+  "thumb": 14,
+  "gallery": [
+   4,
+   6,
+   10,
+   19
+  ]
+ },
+ "medicom": {
+  "folder": "Medicom",
+  "thumb": 2,
+  "gallery": [
+   0,
+   1,
+   3,
+   7
+  ]
+ },
+ "palm-hills-villa": {
+  "folder": "Palm Hills - Villa",
+  "thumb": 7,
+  "gallery": [
+   2,
+   0,
+   5,
+   8
+  ]
+ },
+ "banha-university": {
+  "folder": "Banha Univeristy",
+  "thumb": 2,
+  "gallery": [
+   1,
+   6,
+   5,
+   0
+  ]
+ },
+ "world-taste-restaurant": {
+  "folder": "World Taste Restaurant",
+  "thumb": 9,
+  "gallery": [
+   2,
+   5,
+   8,
+   13
+  ]
+ }
+}

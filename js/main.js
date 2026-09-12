@@ -28,6 +28,19 @@ const isTouch = window.matchMedia('(hover: none)').matches || window.innerWidth 
 const $ = (sel, ctx = document) => ctx.querySelector(sel)
 const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel))
 
+/**
+ * Vite rewrites src/href in HTML, but NOT paths held in data-* attributes.
+ * The finish modal and the project overlay both load their images from data-*,
+ * so those paths have to be mapped to the built (hashed) URLs by hand. These
+ * globs do that at build time; in dev they resolve to the source paths.
+ */
+const ASSET_URLS = {
+  ...import.meta.glob('../assets/projects/**/*.webp', { eager: true, query: '?url', import: 'default' }),
+  ...import.meta.glob('../assets/finishes/*.webp', { eager: true, query: '?url', import: 'default' })
+}
+
+const assetUrl = (path) => ASSET_URLS[`../${String(path).trim().replace(/^\/+/, '')}`] || path
+
 /* ------------------------------------------------------- Smooth scrolling */
 export let lenis = null
 
@@ -250,7 +263,7 @@ function initFinishModal() {
 
   const open = (card) => {
     const d = card.dataset
-    img.src = d.image
+    img.src = assetUrl(d.image)
     img.alt = `${d.name} — MarmoFiber ${d.collection} finish`
     name.textContent = d.name
     coll.textContent = d.collection
@@ -312,12 +325,12 @@ function initProjectDetail() {
     title: $('[data-pd-title]', overlay),
     cat: $('[data-pd-category]', overlay),
     location: $('[data-pd-location]', overlay),
-    collection: $('[data-pd-collection]', overlay),
+    sector: $('[data-pd-sector]', overlay),
     application: $('[data-pd-application]', overlay),
-    finish: $('[data-pd-finish]', overlay),
+    scope: $('[data-pd-scope]', overlay),
     overview: $('[data-pd-overview]', overlay),
-    challenge: $('[data-pd-challenge]', overlay),
-    response: $('[data-pd-response]', overlay),
+    material: $('[data-pd-material]', overlay),
+    detail: $('[data-pd-detail]', overlay),
     gallery: $('[data-pd-gallery]', overlay)
   }
 
@@ -332,22 +345,22 @@ function initProjectDetail() {
     index = (i + list.length) % list.length
     const d = list[index].dataset
 
-    fields.image.src = d.image
+    fields.image.src = assetUrl(d.image)
     fields.image.alt = `${d.title} — MarmoFiber project`
     fields.title.textContent = d.title
     fields.cat.textContent = d.category
     fields.location.textContent = d.location
-    fields.collection.textContent = d.collection
+    fields.sector.textContent = d.sector
     fields.application.textContent = d.application
-    fields.finish.textContent = d.finish
+    fields.scope.textContent = d.scope
     fields.overview.textContent = d.overview
-    fields.challenge.textContent = d.challenge
-    fields.response.textContent = d.response
+    fields.material.textContent = d.material
+    fields.detail.textContent = d.detail
 
     fields.gallery.innerHTML = (d.gallery || '')
       .split(',')
       .filter(Boolean)
-      .map((src, n) => `<div><img src="${src.trim()}" alt="${d.title} — material detail ${n + 1}" loading="lazy" decoding="async"></div>`)
+      .map((src, n) => `<div><img src="${assetUrl(src)}" alt="${d.title} — material detail ${n + 1}" loading="lazy" decoding="async"></div>`)
       .join('')
 
     prevBtn.disabled = list.length < 2
