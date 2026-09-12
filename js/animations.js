@@ -123,7 +123,7 @@ export function initAnimations({ gsap, ScrollTrigger, reduced }) {
     gsap.fromTo(num,
       { color: '#343434' },
       {
-        color: '#b45536', duration: 0.6, ease: 'none',
+        color: '#d6242c', duration: 0.6, ease: 'none',
         scrollTrigger: { trigger: row, start: 'top 72%', end: 'bottom 55%', toggleActions: 'play reverse play reverse' }
       }
     )
