@@ -109,6 +109,14 @@ attributes. The finish modal and the project overlay load their images from
 (hashed) URLs through `import.meta.glob`. If you add a new folder of images that
 is loaded this way, add it to the `ASSET_URLS` globs at the top of `main.js`.
 
+### Overlays and Lenis
+
+Lenis calls `preventDefault()` on wheel events across the document — including
+while it is stopped — so any element that scrolls on its own must carry
+`data-lenis-prevent`, or its content becomes unreachable. The project overlay,
+the finish modal panel and the mobile menu all have it. Add it to any new
+scrollable overlay.
+
 ### Reusable behaviours
 
 Add these attributes to new markup and the existing JavaScript picks them up:
@@ -150,8 +158,6 @@ preselects the enquiry type and prefills the finish.
   application and detail shots are still Unsplash placeholders; filenames
   describe their role (`app-facade.webp`, `stage-02-fiber.webp`) so
   replacements drop straight in.
-- **Chairman portrait** — `assets/images/portrait-chairman.webp` is an abstract
-  architectural stand-in. Marked with a `TODO` comment on both pages that use it.
 - **Technical PDFs** in `public/assets/documents/` — every file is a marked
   placeholder. See the README in that folder.
 - **Project locations** — five records show only "Egypt" because the city is not

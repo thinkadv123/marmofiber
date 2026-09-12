@@ -99,7 +99,10 @@
   .collection-intro { grid-template-columns: 1fr; }
 
   .split--reverse .split__media { order: 0; }
-  .founder__portrait { aspect-ratio: 16 / 10; }
+  /* A landscape crop of a standing portrait looks wrong — stay portrait
+     and cap the width so the photograph does not dominate the column. */
+  .founder__portrait { aspect-ratio: 3 / 4; max-width: 420px; }
+  .founder__portrait--tall { aspect-ratio: 2 / 3; }
 
   .modal__panel { grid-template-columns: 1fr; }
   .modal__media { min-height: 260px; aspect-ratio: 16 / 10; }

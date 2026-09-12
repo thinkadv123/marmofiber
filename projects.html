@@ -390,7 +390,8 @@
   </main>
 
   <!-- ================================================ PROJECT DETAIL VIEW -->
-  <div class="project-detail" id="project-detail" role="dialog" aria-modal="true" aria-labelledby="pd-title" aria-hidden="true">
+  <!-- data-lenis-prevent: this panel scrolls itself, so Lenis must not swallow its wheel events. -->
+  <div class="project-detail" id="project-detail" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="pd-title" aria-hidden="true">
     <button class="project-detail__close" type="button" data-pd-close aria-label="Close project"><i></i><i></i></button>
 
     <div class="project-detail__hero">
