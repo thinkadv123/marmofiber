@@ -558,11 +558,22 @@ function initVisualiser() {
     if (swatch) apply(swatch)
   })
 
-  if (scale) {
-    scale.addEventListener('input', () => {
-      viz.style.setProperty('--viz-tile', `${scale.value}px`)
-    })
+  /**
+   * The tile is sized as a PERCENTAGE of the rendered building, not in absolute
+   * pixels — otherwise the same finish looks fine-grained on a wide monitor and
+   * boulder-sized on a phone. Recomputed whenever the stage resizes.
+   */
+  const applyScale = () => {
+    const pct = Number(scale ? scale.value : 12)
+    const width = viz.getBoundingClientRect().width || 1
+    viz.style.setProperty('--viz-tile', `${Math.round((width * pct) / 100)}px`)
   }
+
+  applyScale()
+  if (scale) scale.addEventListener('input', applyScale)
+  if ('ResizeObserver' in window) new ResizeObserver(applyScale).observe(viz)
+  else window.addEventListener('resize', applyScale)
+
   if (reset) reset.addEventListener('click', clear)
 
   void current

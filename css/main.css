@@ -1883,8 +1883,8 @@ body.nav-open { overflow: hidden; }
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--charcoal);
-  aspect-ratio: 3 / 2;
-  --viz-tile: 240px;
+  aspect-ratio: 16 / 9;
+  --viz-tile: 12%; /* replaced with a px value by JS, sized off the stage */
 }
 
 .viz__photo,
@@ -1912,13 +1912,15 @@ body.nav-open { overflow: hidden; }
   background-size: var(--viz-tile) var(--viz-tile);
   background-repeat: repeat;
   mix-blend-mode: multiply;
-  filter: brightness(1.35);
+  filter: brightness(1.05); /* calibrated against the surface layer */
   opacity: 0;
   transition: opacity 0.5s var(--ease-soft);
   -webkit-mask-image: url('../assets/visualiser/building-mask.png');
   mask-image: url('../assets/visualiser/building-mask.png');
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }

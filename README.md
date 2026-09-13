@@ -124,9 +124,15 @@ Three stacked layers do the work:
 | `.viz__texture` | the chosen tile | masked to the same façade and `mix-blend-mode: multiply`, which keeps the building's real sun and shadow |
 
 **Swapping the building:** replace the three files in `assets/visualiser/`.
-The mask is keyed from the photograph — sky by blue dominance, glazing by
-luminance, ground by a diagonal cut — so a new building needs a new mask, not
-just a new photo.
+The mask is keyed from the photograph — a per-column roofline for the silhouette,
+sky removed by blue dominance, ground by a base cut — so a new building needs a
+new mask, not just a new photo. The greyscale surface layer and the texture's
+`filter: brightness()` are calibrated against each other; if you change one,
+re-check a saturated finish and a neutral one side by side.
+
+The tile is sized as a **percentage of the rendered building**, computed in JS
+and refreshed by a `ResizeObserver`. Absolute pixels look fine-grained on a
+monitor and boulder-sized on a phone.
 
 **Adding a finish:** drop the slab photo into `assets/finishes/`, generate a
 512px seamless tile into `tile/` and a 180px thumbnail into `swatch/`, then copy
