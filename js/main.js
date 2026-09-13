@@ -36,7 +36,8 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel))
  */
 const ASSET_URLS = {
   ...import.meta.glob('../assets/projects/**/*.webp', { eager: true, query: '?url', import: 'default' }),
-  ...import.meta.glob('../assets/finishes/*.webp', { eager: true, query: '?url', import: 'default' })
+  ...import.meta.glob('../assets/finishes/*.webp', { eager: true, query: '?url', import: 'default' }),
+  ...import.meta.glob('../assets/finishes/tile/*.webp', { eager: true, query: '?url', import: 'default' })
 }
 
 const assetUrl = (path) => ASSET_URLS[`../${String(path).trim().replace(/^\/+/, '')}`] || path
@@ -482,6 +483,91 @@ function initContactForm() {
   })
 }
 
+/* --------------------------------------------------- Material visualiser */
+/**
+ * Drop (or tap) a finish onto the building. Drag-and-drop is a desktop
+ * nicety — HTML5 DnD does not fire on touch — so tapping a swatch is the
+ * primary interaction and works everywhere, keyboard included.
+ */
+function initVisualiser() {
+  const viz = $('[data-viz]')
+  if (!viz) return
+
+  const texture = $('[data-viz-texture]', viz)
+  const badge = $('[data-viz-badge]')
+  const badgeName = $('[data-viz-name]')
+  const badgeCollection = $('[data-viz-collection]')
+  const status = $('[data-viz-status]')
+  const scale = $('[data-viz-scale]')
+  const reset = $('[data-viz-reset]')
+  const swatches = $$('[data-viz-finish]')
+  if (!texture || !swatches.length) return
+
+  let current = null
+
+  const apply = (swatch) => {
+    const { tile, name, collection } = swatch.dataset
+    current = swatch
+    texture.style.backgroundImage = `url("${assetUrl(tile)}")`
+    viz.classList.add('is-applied')
+    swatches.forEach((s) => s.setAttribute('aria-pressed', String(s === swatch)))
+
+    if (badge) badge.hidden = false
+    if (badgeName) badgeName.textContent = name
+    if (badgeCollection) badgeCollection.textContent = collection
+    if (status) status.textContent = `${name} applied — ${collection} Collection.`
+    if (reset) reset.disabled = false
+  }
+
+  const clear = () => {
+    current = null
+    texture.style.backgroundImage = 'none'
+    viz.classList.remove('is-applied')
+    swatches.forEach((s) => s.setAttribute('aria-pressed', 'false'))
+    if (badge) badge.hidden = true
+    if (status) status.textContent = 'No finish applied.'
+    if (reset) reset.disabled = true
+  }
+
+  swatches.forEach((swatch) => {
+    swatch.addEventListener('click', () => apply(swatch))
+    swatch.addEventListener('dragstart', (e) => {
+      e.dataTransfer.effectAllowed = 'copy'
+      // some browsers refuse the drag without payload
+      e.dataTransfer.setData('text/plain', swatch.dataset.name)
+      viz.dataset.dragging = swatch.dataset.name
+    })
+    swatch.addEventListener('dragend', () => { delete viz.dataset.dragging })
+  })
+
+  const findDragged = () => swatches.find((s) => s.dataset.name === viz.dataset.dragging)
+
+  viz.addEventListener('dragover', (e) => {
+    if (!viz.dataset.dragging) return
+    e.preventDefault()
+    e.dataTransfer.dropEffect = 'copy'
+    viz.classList.add('is-dragover')
+  })
+  viz.addEventListener('dragleave', (e) => {
+    if (!viz.contains(e.relatedTarget)) viz.classList.remove('is-dragover')
+  })
+  viz.addEventListener('drop', (e) => {
+    e.preventDefault()
+    viz.classList.remove('is-dragover')
+    const swatch = findDragged()
+    if (swatch) apply(swatch)
+  })
+
+  if (scale) {
+    scale.addEventListener('input', () => {
+      viz.style.setProperty('--viz-tile', `${scale.value}px`)
+    })
+  }
+  if (reset) reset.addEventListener('click', clear)
+
+  void current
+}
+
 /* ------------------------------------------------------ Language switcher */
 function initLanguage() {
   $$('.lang button').forEach((btn) => {
@@ -549,6 +635,7 @@ function boot() {
   initFinishModal()
   initProjectDetail()
   initContactForm()
+  initVisualiser()
   initLanguage()
   initMisc()
 

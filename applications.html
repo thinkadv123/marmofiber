@@ -4,13 +4,13 @@
   <!-- @include partials/head-common.html -->
 
   <title>Applications | MarmoFiber Across the Built Environment</title>
-  <meta name="description" content="MarmoFiber across building façades, exterior cladding, interior feature walls, entrances, retail and hospitality, and custom architectural elements." />
+  <meta name="description" content="MarmoFiber across building façades, exterior cladding, interior feature walls, entrances and custom architectural elements — plus a visualiser that previews any finish on a real façade." />
   <link rel="canonical" href="https://www.marmofiber.com/applications.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="MarmoFiber" />
   <meta property="og:title" content="Applications | MarmoFiber" />
-  <meta property="og:description" content="One material language across façades, interiors, entrances, retail, hospitality and custom architectural elements." />
+  <meta property="og:description" content="One material language across façades, interiors, entrances and custom architectural elements. Try any finish on a real building." />
   <meta property="og:url" content="https://www.marmofiber.com/applications.html" />
   <meta property="og:image" content="https://www.marmofiber.com/assets/images/page-applications.webp" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -157,37 +157,160 @@
       </div>
     </section>
 
-    <!-- ======================================== 05 — RETAIL AND HOSPITALITY -->
-    <!-- Composition: horizontal image strip. -->
-    <section class="section section--tight full-bleed" id="retail">
+    <!-- ========================================= 05 — MATERIAL VISUALISER -->
+    <!--
+      Drag (or tap) a finish onto the building. The stack is three layers:
+        .viz__photo    the untouched photograph — sky, ground, context
+        .viz__surface  a neutral greyscale of the building only (alpha-masked),
+                       so the finish colour reads true instead of picking up
+                       the warm stone underneath
+        .viz__texture  the finish, masked to the same façade and multiplied
+                       over the grey, which keeps the real sun and shadow
+      Swap the building by replacing the three files in /assets/visualiser/.
+    -->
+    <section class="section visualiser" id="visualiser">
       <div class="shell">
         <div class="grid-12 mb-6">
           <div class="col-5">
-            <p class="app-block__index" data-reveal>05 — Retail and Hospitality</p>
-            <h2 class="h-2 mt-3" data-reveal data-reveal-delay="0.05">Designed for environments with a point of view.</h2>
+            <p class="app-block__index" data-reveal>05 — Material Visualiser</p>
+            <h2 class="h-2 mt-3" data-reveal data-reveal-delay="0.05">Try a finish on a real façade.</h2>
           </div>
           <div class="col-5 start-7" style="align-self:end">
-            <p class="body-copy" data-reveal data-reveal-delay="0.1">Retail and hospitality interiors are rebuilt more often than buildings are. That puts pressure on lead time, repeatability and the ability to match a finish again later — all of which are manufacturing questions.</p>
+            <p class="body-copy" data-reveal data-reveal-delay="0.1">Drag a finish onto the building — or just tap one — to see how it reads at architectural scale, in real sunlight and across real shadow. The building is Hadayek October Metro Station, built with Deko Egypt.</p>
           </div>
         </div>
 
-        <div class="app-strip" data-reveal>
-          <figure>
-            <div><img class="art-img" src="assets/images/app-retail.webp" alt="Pale retail interior with light mineral surfaces" width="1800" height="1200" loading="lazy" decoding="async" /></div>
-            <figcaption>Retail — light mineral interior</figcaption>
-          </figure>
-          <figure>
-            <div><img class="art-img" src="assets/images/project-05-retail.webp" alt="Moulded display niches formed into a warm surface" width="1600" height="1100" loading="lazy" decoding="async" /></div>
-            <figcaption>Retail — moulded display niches</figcaption>
-          </figure>
-          <figure>
-            <div><img class="art-img" src="assets/images/project-03-hospitality.webp" alt="Hospitality interior with warm mineral wall surfaces" width="1600" height="1100" loading="lazy" decoding="async" /></div>
-            <figcaption>Hospitality — feature surfaces</figcaption>
-          </figure>
-          <figure>
-            <div><img class="art-img" src="assets/images/form-stair.webp" alt="Pale stone stair rising through a quiet interior" width="1100" height="1400" loading="lazy" decoding="async" /></div>
-            <figcaption>Hospitality — circulation</figcaption>
-          </figure>
+        <div class="visualiser__stage" data-reveal>
+          <div class="viz" data-viz>
+            <img class="viz__photo" src="assets/visualiser/building.webp" alt="Hadayek October Metro Station — stone-clad elevation used to preview MarmoFiber finishes" width="1800" height="1200" loading="lazy" decoding="async" />
+            <div class="viz__surface" aria-hidden="true"></div>
+            <div class="viz__texture" data-viz-texture aria-hidden="true"></div>
+
+            <p class="viz__hint" data-viz-hint>
+              <span class="viz__hint-mark" aria-hidden="true"></span>
+              Drop a finish here
+            </p>
+
+            <p class="viz__badge" data-viz-badge hidden>
+              <span data-viz-collection>Marble</span>
+              <strong data-viz-name>Beige Marble</strong>
+            </p>
+          </div>
+
+          <div class="visualiser__panel">
+            <p class="eyebrow eyebrow--plain">Choose a finish</p>
+
+            <div class="viz__swatches" role="group" aria-label="MarmoFiber finishes — choose one to preview on the façade">
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/beige-marble.webp"
+              data-name="Beige Marble" data-collection="Marble" aria-pressed="false">
+              <img src="assets/finishes/swatch/beige-marble.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Beige Marble</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/light-beige-marble.webp"
+              data-name="Light Beige Marble" data-collection="Marble" aria-pressed="false">
+              <img src="assets/finishes/swatch/light-beige-marble.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Light Beige Marble</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/pink-marble.webp"
+              data-name="Pink Marble" data-collection="Marble" aria-pressed="false">
+              <img src="assets/finishes/swatch/pink-marble.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Pink Marble</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/ground-beige.webp"
+              data-name="Ground Beige" data-collection="Mineral Stone" aria-pressed="false">
+              <img src="assets/finishes/swatch/ground-beige.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Ground Beige</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/light-brown.webp"
+              data-name="Light Brown" data-collection="Mineral Stone" aria-pressed="false">
+              <img src="assets/finishes/swatch/light-brown.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Light Brown</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/creamy-beige.webp"
+              data-name="Creamy Beige" data-collection="Mineral Stone" aria-pressed="false">
+              <img src="assets/finishes/swatch/creamy-beige.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Creamy Beige</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/caramel.webp"
+              data-name="Caramel" data-collection="Mineral Stone" aria-pressed="false">
+              <img src="assets/finishes/swatch/caramel.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Caramel</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/porous-latte-stone.webp"
+              data-name="Porous Latte Stone" data-collection="Mineral Stone" aria-pressed="false">
+              <img src="assets/finishes/swatch/porous-latte-stone.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Porous Latte Stone</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/off-white-cream.webp"
+              data-name="Off-White Cream" data-collection="Mineral Stone" aria-pressed="false">
+              <img src="assets/finishes/swatch/off-white-cream.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Off-White Cream</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/spotted-sandstone.webp"
+              data-name="Spotted Sandstone" data-collection="Sandstone" aria-pressed="false">
+              <img src="assets/finishes/swatch/spotted-sandstone.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Spotted Sandstone</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/coarse-sandstone.webp"
+              data-name="Coarse Sandstone" data-collection="Sandstone" aria-pressed="false">
+              <img src="assets/finishes/swatch/coarse-sandstone.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Coarse Sandstone</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/fine-grained-concrete.webp"
+              data-name="Fine-Grained Concrete" data-collection="Urban" aria-pressed="false">
+              <img src="assets/finishes/swatch/fine-grained-concrete.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Fine-Grained Concrete</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/light-grey.webp"
+              data-name="Light Grey" data-collection="Urban" aria-pressed="false">
+              <img src="assets/finishes/swatch/light-grey.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Light Grey</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/cocoa.webp"
+              data-name="Cocoa" data-collection="Earth" aria-pressed="false">
+              <img src="assets/finishes/swatch/cocoa.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Cocoa</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/terracotta-with-grain.webp"
+              data-name="Terracotta with Grain" data-collection="Earth" aria-pressed="false">
+              <img src="assets/finishes/swatch/terracotta-with-grain.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Terracotta with Grain</span>
+            </button>
+            <button class="viz__swatch" type="button" draggable="true"
+              data-viz-finish data-tile="assets/finishes/tile/terracotta-classic.webp"
+              data-name="Terracotta Classic" data-collection="Earth" aria-pressed="false">
+              <img src="assets/finishes/swatch/terracotta-classic.webp" alt="" width="180" height="180" loading="lazy" decoding="async" />
+              <span class="viz__swatch-name">Terracotta Classic</span>
+            </button>
+            </div>
+
+            <div class="viz__controls">
+              <label class="viz__range">
+                <span>Texture scale</span>
+                <input type="range" min="120" max="560" step="10" value="240" data-viz-scale aria-label="Texture scale" />
+              </label>
+              <button class="viz__reset" type="button" data-viz-reset disabled>Reset façade</button>
+            </div>
+
+            <p class="viz__note" role="status" aria-live="polite" data-viz-status>No finish applied.</p>
+            <p class="viz__note">A visual guide only. Screen colour, tile scale and lighting all shift how a finish reads — confirm every selection from a physical sample.</p>
+            <a class="link-line mt-3" href="collections.html">See all finishes<svg viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor"/></svg></a>
+          </div>
         </div>
       </div>
     </section>

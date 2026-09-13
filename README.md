@@ -51,7 +51,10 @@ Swiper, Lenis. No framework, no backend, no build-time content system.
 ├── assets/
 │   ├── images/           hero and section photography
 │   ├── projects/         five images per built project (thumb + 01-04)
+│   ├── visualiser/       building photo, greyscale surface and façade mask
 │   ├── finishes/         web-ready finish swatches used on the site
+│   │   ├── tile/         512px seamless tiles for the visualiser
+│   │   └── swatch/       180px thumbnails for the swatch buttons
 │   ├── products/         original client swatch files (source, not shipped)
 │   ├── certificates/     Deko Egypt management-system certificates
 │   ├── textures/         background textures
@@ -108,6 +111,27 @@ attributes. The finish modal and the project overlay load their images from
 `data-image` / `data-gallery`, so `js/main.js` maps those paths to the built
 (hashed) URLs through `import.meta.glob`. If you add a new folder of images that
 is loaded this way, add it to the `ASSET_URLS` globs at the top of `main.js`.
+
+### Material visualiser (applications.html)
+
+Drag or tap a finish onto a real building and it is applied to the façade.
+Three stacked layers do the work:
+
+| Layer | File | Role |
+| --- | --- | --- |
+| `.viz__photo` | `building.webp` | the untouched photograph — sky, ground, context |
+| `.viz__surface` | `building-surface.webp` | greyscale of the building only, alpha-masked, so the finish colour reads true instead of picking up the stone underneath |
+| `.viz__texture` | the chosen tile | masked to the same façade and `mix-blend-mode: multiply`, which keeps the building's real sun and shadow |
+
+**Swapping the building:** replace the three files in `assets/visualiser/`.
+The mask is keyed from the photograph — sky by blue dominance, glazing by
+luminance, ground by a diagonal cut — so a new building needs a new mask, not
+just a new photo.
+
+**Adding a finish:** drop the slab photo into `assets/finishes/`, generate a
+512px seamless tile into `tile/` and a 180px thumbnail into `swatch/`, then copy
+one `.viz__swatch` button in `applications.html`. Tiles are mirrored four ways
+so they repeat across a façade without seams.
 
 ### Overlays and Lenis
 

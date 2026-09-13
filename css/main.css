@@ -1868,6 +1868,170 @@ body.nav-open { overflow: hidden; }
 .app-type { font-family: var(--font-display); font-size: clamp(1.875rem, 4vw, 4rem); font-weight: 500; line-height: 1.12; letter-spacing: -0.025em; color: var(--white); }
 .app-type em { font-style: italic; color: var(--accent); }
 
+/* -------------------------------------------------- Material visualiser */
+.visualiser__stage {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+
+/* The three-layer composite. isolation keeps the multiply blend inside. */
+.viz {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--charcoal);
+  aspect-ratio: 3 / 2;
+  --viz-tile: 240px;
+}
+
+.viz__photo,
+.viz__surface,
+.viz__texture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.viz__photo { object-fit: cover; }
+
+/* Neutral greyscale of the façade — the alpha channel is the mask. */
+.viz__surface {
+  background: url('../assets/visualiser/building-surface.webp') center / cover no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-soft);
+}
+
+/* The finish, clipped to the same façade and multiplied over the grey so the
+   building's own sunlight and shadow survive. */
+.viz__texture {
+  background-image: none;
+  background-size: var(--viz-tile) var(--viz-tile);
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  filter: brightness(1.35);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-soft);
+  -webkit-mask-image: url('../assets/visualiser/building-mask.png');
+  mask-image: url('../assets/visualiser/building-mask.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.viz.is-applied .viz__surface,
+.viz.is-applied .viz__texture { opacity: 1; }
+
+.viz.is-dragover { border-color: var(--accent); }
+.viz.is-dragover .viz__hint { color: var(--white); border-color: var(--accent); background: rgba(214, 36, 44, 0.9); }
+
+.viz__hint {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(9, 9, 9, 0.72);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line);
+  font-family: var(--font-condensed);
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--light-grey);
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-soft), background-color 0.3s var(--ease-soft), color 0.3s var(--ease-soft);
+}
+
+.viz__hint-mark { width: 10px; height: 10px; border: 1px solid var(--accent); display: block; }
+.viz.is-applied .viz__hint { opacity: 0; }
+.viz.is-applied.is-dragover .viz__hint { opacity: 1; }
+
+.viz__badge {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.9rem 1.4rem;
+  background: rgba(9, 9, 9, 0.78);
+  backdrop-filter: blur(6px);
+  border-top: 2px solid var(--accent);
+}
+
+.viz__badge span { font-family: var(--font-condensed); font-size: 0.625rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-text); }
+.viz__badge strong { font-weight: 500; font-size: 1rem; color: var(--white); }
+
+/* ------------------------------------------------------------- Panel */
+.visualiser__panel { display: grid; gap: 1.1rem; align-content: start; }
+
+.viz__swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 0.6rem;
+}
+
+.viz__swatch {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: none;
+  cursor: grab;
+  transition: border-color 0.35s var(--ease-soft), transform 0.35s var(--ease);
+}
+
+.viz__swatch img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.viz__swatch-name {
+  display: block;
+  padding: 0 0.4rem 0.45rem;
+  font-family: var(--font-condensed);
+  font-size: 0.5625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--medium-grey);
+  line-height: 1.3;
+}
+
+.viz__swatch:hover { border-color: rgba(255, 255, 255, 0.32); transform: translateY(-2px); }
+.viz__swatch:active { cursor: grabbing; }
+.viz__swatch[aria-pressed='true'] { border-color: var(--accent); }
+.viz__swatch[aria-pressed='true'] .viz__swatch-name { color: var(--white); }
+
+.viz__controls { display: grid; gap: 0.85rem; padding-top: 0.4rem; border-top: 1px solid var(--line); }
+
+.viz__range { display: grid; gap: 0.5rem; }
+.viz__range span { font-family: var(--font-condensed); font-size: 0.625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--medium-grey); }
+.viz__range input { width: 100%; accent-color: var(--accent); min-height: 24px; }
+
+.viz__reset {
+  justify-self: start;
+  min-height: 44px;
+  padding: 0 1.1rem;
+  border: 1px solid var(--line);
+  font-family: var(--font-condensed);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--light-grey);
+  transition: color 0.3s var(--ease-soft), border-color 0.3s var(--ease-soft);
+}
+
+.viz__reset:hover:not([disabled]) { color: var(--white); border-color: var(--accent); }
+.viz__reset[disabled] { opacity: 0.35; pointer-events: none; }
+
+.viz__note { font-size: 0.75rem; line-height: 1.6; color: var(--medium-grey); }
+
 /* -------------------------------------------------------- 18 Projects page */
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 2.6vw, 2.75rem); }
 .project-grid > * { min-width: 0; }

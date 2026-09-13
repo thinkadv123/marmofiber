@@ -113,6 +113,9 @@
 
   .project-card { width: clamp(300px, 78vw, 620px); }
 
+  /* Visualiser: the stage stacks above the finish panel. */
+  .visualiser__stage { grid-template-columns: 1fr; }
+
   /* The horizontal gallery becomes a normal section with a swipe slider. */
   .projects-h { height: auto; padding-block: var(--section-y); }
   .projects-h__viewport { height: auto; padding-top: 0; display: block; }
@@ -197,6 +200,10 @@
   .modal__panel { max-height: 100svh; height: 100svh; border: 0; }
 
   .app-strip figure { width: 76vw; }
+
+  .viz { aspect-ratio: 4 / 3; }
+  .viz__swatches { grid-template-columns: repeat(auto-fill, minmax(74px, 1fr)); }
+  .viz__badge { padding: 0.7rem 1rem; }
 
   .btn { width: 100%; }
   .sample-cta__actions .btn,
