@@ -151,7 +151,9 @@
 
   .grid-12 { grid-template-columns: repeat(6, 1fr); }
   .col-3, .col-4, .col-5 { grid-column: span 6 / span 6; }
-  .col-6, .col-7, .col-8, .col-9, .col-10 { grid-column: 1 / -1; }
+  /* Span, not 1 / -1: a span survives the .start-* reset below, whereas an
+     explicit end line leaves the item hanging off whatever start it inherits. */
+  .col-6, .col-7, .col-8, .col-9, .col-10 { grid-column: span 6 / span 6; }
   .start-2, .start-3, .start-4, .start-5, .start-6, .start-7, .start-8 { grid-column-start: auto; }
 }
 

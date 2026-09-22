@@ -58,7 +58,10 @@ Swiper, Lenis. No framework, no backend, no build-time content system.
 │   ├── products/         original client swatch files (source, not shipped)
 │   ├── certificates/     Deko Egypt management-system certificates
 │   ├── textures/         background textures
-│   └── logo/             MarmoFiber logo files
+│   └── logo/             MarmoFiber logo files — `marmo-fiber-light.png` is
+│                          the header lockup (black glyphs recoloured white for
+│                          the dark header); `marmo-fiber-dark.png` is the same
+│                          artwork for light backgrounds
 ├── public/assets/documents/   PDFs served as-is (placeholders)
 └── vite.config.js
 ```
@@ -183,11 +186,11 @@ preselects the enquiry type and prefills the finish.
 
 ## Placeholders to replace before launch
 
-- **Section photography** in `assets/images/` — the four homepage hero slides
-  and the projects page hero are real MarmoFiber work. The remaining material,
-  application and detail shots are still Unsplash placeholders; filenames
-  describe their role (`app-facade.webp`, `stage-02-fiber.webp`) so
-  replacements drop straight in.
+- **Section photography** in `assets/images/` — the four homepage hero slides,
+  the projects page hero and the collections page hero are real MarmoFiber work.
+  The remaining material, application and detail shots are still Unsplash
+  placeholders; filenames describe their role (`app-facade.webp`,
+  `stage-02-fiber.webp`) so replacements drop straight in.
 - **Technical PDFs** in `public/assets/documents/` — every file is a marked
   placeholder. See the README in that folder.
 - **Project locations** — five records show only "Egypt" because the city is not
