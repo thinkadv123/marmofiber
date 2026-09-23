@@ -50,7 +50,8 @@ Swiper, Lenis. No framework, no backend, no build-time content system.
 │   └── page-transitions.js  loader + curtain between pages
 ├── assets/
 │   ├── images/           hero and section photography
-│   ├── projects/         five images per built project (thumb + 01-04)
+│   ├── projects/         thumb.webp + 01-04.webp per built project (a few
+│   │                     carry three gallery images, not four)
 │   ├── visualiser/       building photo, greyscale surface and façade mask
 │   ├── finishes/         web-ready finish swatches used on the site
 │   │   ├── tile/         512px seamless tiles for the visualiser
@@ -196,6 +197,10 @@ preselects the enquiry type and prefills the finish.
 - **Project locations** — five records show only "Egypt" because the city is not
   yet confirmed: Arab African Bank, Al Aly Al Azaeem Mosque, El Mo'oz Mosque,
   Al Marasem, Medicom. There is a `TODO` comment above the grid listing them.
+- **Egyptian Parliament, Masjid Misr El Kebeer and The Octagon** — the supplied
+  photography is press and web imagery of varying resolution, not a commissioned
+  shoot. Two gallery frames are under 600px wide and will look soft in the
+  detail overlay. Replace them when project photography is available.
 - **Project copy** — written from the project photography, describing the visible
   architectural work. No client briefs, dates, areas, awards or performance
   figures are stated anywhere on the site. Swap in approved case-study copy when

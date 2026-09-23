@@ -108,5 +108,33 @@
    8,
    13
   ]
+ },
+ "egyptian-parliament": {
+  "folder": "Egyptian Parliament",
+  "thumb": "2025-639016652573749572-374.jpg",
+  "gallery": [
+   "2025-639016652574218272-421.jpg",
+   "2021-637750815300257030-25.jpeg",
+   "images.jpeg"
+  ]
+ },
+ "masjid-misr-el-kebeer": {
+  "folder": "Masjid Misr El Kebeer - The Grand Mosque",
+  "thumb": "2509c3d8-9b55-42b9-adfe-f3b8d3640f51.jpg",
+  "gallery": [
+   "Egypt's_Islamic_Cultural_Center.jpg",
+   "islamic-cultural-center-04jpg-hjpg.jpg",
+   "images (1).jpeg"
+  ]
+ },
+ "the-octagon": {
+  "folder": "Ministry of Defense The Octagon",
+  "thumb": "Et19J9TWYAMGpS0.jpg",
+  "gallery": [
+   "Em5Php3W8AIuX6X.jpg",
+   "images.jpeg",
+   "581884d0-77d4-11f1-9ff0-c149b3ab9807-file-1783188931988-76726895.webp",
+   "626a61674c59b74af7392908.jpeg"
+  ]
  }
 }
