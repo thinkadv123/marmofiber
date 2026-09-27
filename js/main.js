@@ -257,8 +257,8 @@ function initFinishModal() {
   const coll = $('[data-modal-collection]', modal)
   const desc = $('[data-modal-desc]', modal)
   const code = $('[data-modal-code]', modal)
-  const use = $('[data-modal-use]', modal)
-  const apps = $('[data-modal-applications]', modal)
+  const surface = $('[data-modal-surface]', modal)
+  const format = $('[data-modal-format]', modal)
   const sampleLink = $('[data-modal-sample]', modal)
   let lastFocus = null
 
@@ -270,8 +270,8 @@ function initFinishModal() {
     coll.textContent = d.collection
     desc.textContent = d.desc
     code.textContent = d.code
-    use.textContent = d.use
-    apps.textContent = d.applications
+    surface.textContent = d.surface
+    format.textContent = d.format
     if (sampleLink) sampleLink.href = `contact.html?enquiry=sample&finish=${encodeURIComponent(d.name)}`
 
     lastFocus = document.activeElement

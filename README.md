@@ -53,9 +53,11 @@ Swiper, Lenis. No framework, no backend, no build-time content system.
 │   ├── projects/         thumb.webp + 01-04.webp per built project (a few
 │   │                     carry three gallery images, not four)
 │   ├── visualiser/       building photo, greyscale surface and façade mask
-│   ├── finishes/         web-ready finish swatches used on the site
-│   │   ├── tile/         512px seamless tiles for the visualiser
-│   │   └── swatch/       180px thumbnails for the swatch buttons
+│   ├── finishes/         the 64-finish collection, one 760x950 card each
+│   │   ├── tile/         512px seamless tiles (only the 20 the visualiser offers)
+│   │   ├── swatch/       180px thumbnails for the swatch buttons
+│   │   └── _catalogue.json  generated index: name, reference, collection,
+│   │                     family, surface, format, measured tone, source file
 │   ├── products/         original client swatch files (source, not shipped)
 │   ├── certificates/     Deko Egypt management-system certificates
 │   ├── textures/         background textures
@@ -100,7 +102,7 @@ Everything below is plain markup — no JavaScript changes required.
 
 | What | Where |
 | --- | --- |
-| Finishes (name, code, description, image) | `collections.html` — `data-*` on each `<article class="finish-card">`; these feed both the card and the detail modal |
+| Finishes (name, reference, surface, format, description, image) | `collections.html` — `data-*` on each `<article class="finish-card">`; these feed both the card and the detail modal |
 | Projects (copy, gallery, metadata) | `projects.html` — `data-*` on each `<a class="project-tile">`; these feed the detail overlay. Images live in `assets/projects/<slug>/` as `thumb.webp` + `01`–`04.webp` |
 | Homepage hero slides | `index.html` — each `<article class="hero__slide">` |
 | Application sections | `applications.html` |
@@ -141,7 +143,9 @@ monitor and boulder-sized on a phone.
 **Adding a finish:** drop the slab photo into `assets/finishes/`, generate a
 512px seamless tile into `tile/` and a 180px thumbnail into `swatch/`, then copy
 one `.viz__swatch` button in `applications.html`. Tiles are mirrored four ways
-so they repeat across a façade without seams.
+so they repeat across a façade without seams. `tile/` holds only the finishes
+the visualiser offers: `main.js` globs the folder eagerly, so every file in it
+ships whether a swatch uses it or not.
 
 ### Overlays and Lenis
 
@@ -182,6 +186,19 @@ and pick one:
 
 Deep links work out of the box: `contact.html?enquiry=sample&finish=Caramel`
 preselects the enquiry type and prefills the finish.
+
+---
+
+## The collection
+
+The 64 finishes on `collections.html` are the client's own catalogue, built from
+`references/0- Products/`. The five collections, the sub-families under Special
+Patterns and every name and reference come from those folders and filenames.
+
+Each description is a family sentence plus a tone measured from the photograph
+(`Tone on the photographed sample: pale sand`) — nothing about performance,
+durability or recommended use is stated, because none of it is documented.
+`_catalogue.json` records the source file for every finish.
 
 ---
 
