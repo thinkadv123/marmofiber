@@ -124,28 +124,35 @@
     <section class="section section--tight" id="finishes" data-filter-group="all" data-filter-param="collection">
       <div class="shell">
         <div class="grid-12 mb-6">
-          <div class="col-4">
+          <div class="col-6">
             <p class="section-number" data-reveal>02 — Finishes</p>
             <h2 class="h-2 mt-3" data-reveal data-reveal-delay="0.05">Sixty-four finishes.</h2>
           </div>
-          <div class="col-7 start-6" style="align-self:end">
-            <div class="filters" data-reveal>
-              <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
-              <button class="filter-btn" type="button" data-filter="vetrine" aria-pressed="false">Marmo Vetrine</button>
-              <button class="filter-btn" type="button" data-filter="terra" aria-pressed="false">Marmo Terra</button>
-              <button class="filter-btn" type="button" data-filter="rough" aria-pressed="false">Rough</button>
-              <button class="filter-btn" type="button" data-filter="patterns" aria-pressed="false">Special Patterns</button>
-              <button class="filter-btn" type="button" data-filter="features" aria-pressed="false">Special Design Features</button>
-              <button class="filter-btn" type="button" data-filter="linea" aria-pressed="false">Linea</button>
-              <button class="filter-btn" type="button" data-filter="carro" aria-pressed="false">Carro</button>
-              <button class="filter-btn" type="button" data-filter="vein" aria-pressed="false">Marmo Vein</button>
-              <button class="filter-btn" type="button" data-filter="stria" aria-pressed="false">Marmo Stria</button>
-              <span class="filter-count"><b data-filter-count>64</b> finishes</span>
-            </div>
+          <div class="col-4 start-9" style="align-self:end">
+            <p class="filter-count" data-reveal>Showing <b data-filter-count>64</b> of 64</p>
           </div>
         </div>
 
-        <div class="finish-grid">
+        <div class="finishes-layout">
+          <!-- Collections rail. The buttons are ordinary [data-filter] buttons,
+               so initFilters() and the ?collection= deep link work unchanged. -->
+          <nav class="cat-nav" aria-label="Filter finishes by collection">
+            <p class="cat-nav__label">Browse by collection</p>
+            <ul class="cat-nav__list">
+              <li><button class="cat-nav__btn" type="button" data-filter="all" aria-pressed="true">All finishes<span>64</span></button></li>
+              <li><button class="cat-nav__btn" type="button" data-filter="vetrine" aria-pressed="false">Marmo Vetrine<span>09</span></button></li>
+              <li><button class="cat-nav__btn" type="button" data-filter="terra" aria-pressed="false">Marmo Terra<span>02</span></button></li>
+              <li><button class="cat-nav__btn" type="button" data-filter="rough" aria-pressed="false">Rough<span>15</span></button></li>
+              <li><button class="cat-nav__btn" type="button" data-filter="patterns" aria-pressed="false">Special Patterns<span>35</span></button></li>
+              <li><button class="cat-nav__btn cat-nav__btn--sub" type="button" data-filter="linea" aria-pressed="false">Linea<span>07</span></button></li>
+              <li><button class="cat-nav__btn cat-nav__btn--sub" type="button" data-filter="carro" aria-pressed="false">Carro<span>14</span></button></li>
+              <li><button class="cat-nav__btn cat-nav__btn--sub" type="button" data-filter="vein" aria-pressed="false">Marmo Vein<span>03</span></button></li>
+              <li><button class="cat-nav__btn cat-nav__btn--sub" type="button" data-filter="stria" aria-pressed="false">Marmo Stria<span>11</span></button></li>
+              <li><button class="cat-nav__btn" type="button" data-filter="features" aria-pressed="false">Special Design Features<span>03</span></button></li>
+            </ul>
+          </nav>
+
+          <div class="finish-grid">
 
           <!-- ————————————————————————————————— Marmo Vetrine -->
           <article class="finish-card" data-tags="vetrine light">
@@ -1499,6 +1506,7 @@
             </span>
           </article>
 
+          </div>
         </div>
 
         <p class="form-note mt-6" style="max-width:80ch">

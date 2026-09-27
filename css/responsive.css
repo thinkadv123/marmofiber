@@ -32,7 +32,7 @@
      on one line once the logo, nav and CTA are competing for space. */
   .lang { display: none; }
 
-  .finish-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .finish-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .resource-grid,
   .enquiry-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .collection-grid { grid-template-columns: repeat(2, 1fr); }
@@ -44,6 +44,34 @@
 
 /* --------------------------------------- ≤ 1080px — navigation collapses */
 @media (max-width: 1080px) {
+  /* The collections rail becomes a scrollable row once there is no room for a
+     column beside the grid. Same buttons, so filtering is unaffected. */
+  .finishes-layout { grid-template-columns: 1fr; gap: 1.75rem; }
+  .cat-nav { position: static; }
+  .cat-nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.6rem;
+    border-top: 0;
+  }
+  .cat-nav__btn {
+    min-height: 44px;
+    padding: 0 1.05rem;
+    border: 1px solid var(--line);
+    border-left-width: 1px;
+    gap: 0.55rem;
+    font-size: 0.82rem;
+  }
+  .cat-nav__btn--sub { padding-left: 1.05rem; }
+  .cat-nav__btn:hover,
+  .cat-nav__btn--sub:hover { padding-left: 1.05rem; }
+  .cat-nav__btn[aria-pressed='true'] {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .cat-nav__btn[aria-pressed='true'] span { color: rgba(255, 255, 255, 0.8); }
+  .finish-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
   :root {
     --rail: 0px;
     --header-h: 76px;

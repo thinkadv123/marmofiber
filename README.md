@@ -169,7 +169,7 @@ Add these attributes to new markup and the existing JavaScript picks them up:
 | `data-count="1995"` | number counts up once |
 | `data-cursor="Explore"` | label shown inside the desktop cursor on hover |
 | `data-magnetic="0.24"` | button drifts toward the pointer |
-| `data-filter-group` | wraps a filterable grid; items carry `data-tags`, buttons carry `data-filter` |
+| `data-filter-group` | wraps a filterable grid; items carry `data-tags`, buttons carry `data-filter`. Buttons can be laid out any way — `collections.html` uses a sticky rail (`.cat-nav`), `projects.html` a chip row (`.filters`) |
 
 ---
 
