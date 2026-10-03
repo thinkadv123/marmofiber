@@ -211,9 +211,12 @@ durability or recommended use is stated, because none of it is documented.
   `stage-02-fiber.webp`) so replacements drop straight in.
 - **Technical PDFs** in `public/assets/documents/` — every file is a marked
   placeholder. See the README in that folder.
-- **Project locations** — five records show only "Egypt" because the city is not
-  yet confirmed: Arab African Bank, Al Aly Al Azaeem Mosque, El Mo'oz Mosque,
+- **Project locations** — six records show only "Egypt" because the city is not
+  yet confirmed: Al Buhar City, Arab African Bank, Al Aly Al Azaeem Mosque, El Mo'oz Mosque,
   Al Marasem, Medicom. There is a `TODO` comment above the grid listing them.
+- **Al Buhar City** — the sector is shown as "Development" and tagged only
+  Façade + Custom Elements until the client confirms what the city is (residential,
+  hospitality, mixed-use). It is also the homepage's first hero slide.
 - **Egyptian Parliament, Masjid Misr El Kebeer and The Octagon** — the supplied
   photography is press and web imagery of varying resolution, not a commissioned
   shoot. Two gallery frames are under 600px wide and will look soft in the

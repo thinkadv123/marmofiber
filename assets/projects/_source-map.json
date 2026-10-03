@@ -1,4 +1,18 @@
 {
+ "al-buhar-city": {
+  "folder": "Al Buhar City/FINAL",
+  "thumb": "20.jpg",
+  "gallery": [
+   "11.jpg",
+   "4.jpg",
+   "38.jpg",
+   "47.jpg",
+   "7.jpg",
+   "42.jpg"
+  ],
+  "homepage-hero": "52.jpg",
+  "homepage-applications-facade": "53.jpg"
+ },
  "arab-african-bank": {
   "folder": "Arab African Bank",
   "thumb": 10,
