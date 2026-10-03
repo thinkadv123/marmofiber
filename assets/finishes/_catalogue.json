@@ -295,7 +295,7 @@
   "format": "Continuous surface",
   "hex": "#a48669",
   "tone": "warm",
-  "desc": "A flamed face \u2014 finer and more closed than the rough finish, with a shallow, evenly scorched grain. Tone on the photographed sample: mid-toned sand.",
+  "desc": "A flamed face — finer and more closed than the rough finish, with a shallow, evenly scorched grain. Tone on the photographed sample: mid-toned sand.",
   "source": "rough/Flamed F01.jpg"
  },
  {
@@ -308,7 +308,7 @@
   "format": "Continuous surface",
   "hex": "#c5a788",
   "tone": "warm",
-  "desc": "A flamed face \u2014 finer and more closed than the rough finish, with a shallow, evenly scorched grain. Tone on the photographed sample: sand.",
+  "desc": "A flamed face — finer and more closed than the rough finish, with a shallow, evenly scorched grain. Tone on the photographed sample: sand.",
   "source": "rough/Flamed F02.jpg"
  },
  {
@@ -321,7 +321,7 @@
   "format": "Continuous surface",
   "hex": "#6b6562",
   "tone": "grey",
-  "desc": "A flamed face \u2014 finer and more closed than the rough finish, with a shallow, evenly scorched grain. Tone on the photographed sample: dark neutral grey.",
+  "desc": "A flamed face — finer and more closed than the rough finish, with a shallow, evenly scorched grain. Tone on the photographed sample: dark neutral grey.",
   "source": "rough/Flamed F03.jpg"
  },
  {
@@ -334,7 +334,7 @@
   "format": "Continuous surface",
   "hex": "#ab8f72",
   "tone": "warm",
-  "desc": "A flamed face \u2014 finer and more closed than the rough finish, with a shallow, evenly scorched grain. Tone on the photographed sample: mid-toned sand.",
+  "desc": "A flamed face — finer and more closed than the rough finish, with a shallow, evenly scorched grain. Tone on the photographed sample: mid-toned sand.",
   "source": "rough/Flamed F04.jpg"
  },
  {
@@ -620,7 +620,7 @@
   "format": "Fine vertical ribbing",
   "hex": "#877e71",
   "tone": "grey",
-  "desc": "Closely spaced vertical ribs broken along their length \u2014 nearer a chiselled stone face than a cast profile. Tone on the photographed sample: mid neutral grey.",
+  "desc": "Closely spaced vertical ribs broken along their length — nearer a chiselled stone face than a cast profile. Tone on the photographed sample: mid neutral grey.",
   "source": "special patterns/03- Marmo Vein/MV 01.jpg"
  },
  {
@@ -633,7 +633,7 @@
   "format": "Fine vertical ribbing",
   "hex": "#a49179",
   "tone": "warm",
-  "desc": "Closely spaced vertical ribs broken along their length \u2014 nearer a chiselled stone face than a cast profile. Tone on the photographed sample: mid-toned sand.",
+  "desc": "Closely spaced vertical ribs broken along their length — nearer a chiselled stone face than a cast profile. Tone on the photographed sample: mid-toned sand.",
   "source": "special patterns/03- Marmo Vein/MV 02.jpg"
  },
  {
@@ -646,7 +646,7 @@
   "format": "Fine vertical ribbing",
   "hex": "#907861",
   "tone": "warm",
-  "desc": "Closely spaced vertical ribs broken along their length \u2014 nearer a chiselled stone face than a cast profile. Tone on the photographed sample: mid-toned sand.",
+  "desc": "Closely spaced vertical ribs broken along their length — nearer a chiselled stone face than a cast profile. Tone on the photographed sample: mid-toned sand.",
   "source": "special patterns/03- Marmo Vein/MV 03.jpg"
  },
  {
@@ -830,5 +830,109 @@
   "tone": "warm",
   "desc": "A moulded architectural profile, run as a corniche, string course or opening frame. Tone on the photographed sample: mid-toned sand.",
   "source": "Special design features/Marmo cornish b02.jpg"
+ },
+ {
+  "slug": "arcade-lattice-sd01",
+  "name": "Marmo Arcade Lattice",
+  "ref": "SD01",
+  "collection": "Special Design Features",
+  "family": "",
+  "surface": "Carved lattice",
+  "format": "Double-arch panel",
+  "hex": "#bea88e",
+  "tone": "light",
+  "desc": "A twin pointed-arch panel with an interlaced lattice carved across the full spandrel, finished with a raised frame and moulded arch reveals. Tone on the rendered sample: warm sand.",
+  "source": "special/ChatGPT Image Oct 3, 2026, 11_41_54 PM-1.png"
+ },
+ {
+  "slug": "arcade-plain-sd02",
+  "name": "Marmo Arcade Plain",
+  "ref": "SD02",
+  "collection": "Special Design Features",
+  "family": "",
+  "surface": "Framed plain face",
+  "format": "Double-arch panel",
+  "hex": "#c9af92",
+  "tone": "light",
+  "desc": "A twin pointed-arch panel with a plain open-pored face inside a stepped frame, letting the arch profiles carry the composition. Tone on the rendered sample: warm cream.",
+  "source": "special/ChatGPT Image Oct 3, 2026, 11_41_56 PM-2.png"
+ },
+ {
+  "slug": "parapet-merlon-sd03",
+  "name": "Marmo Crest Parapet",
+  "ref": "SD03",
+  "collection": "Special Design Features",
+  "family": "",
+  "surface": "Stepped merlons",
+  "format": "Parapet run",
+  "hex": "#c4ad93",
+  "tone": "light",
+  "desc": "A crenellated parapet run: a rounded coping moulding over coursed panels, crowned by a line of stepped, leaf-tipped merlons. Tone on the rendered sample: warm cream.",
+  "source": "special/ChatGPT Image Oct 3, 2026, 11_41_57 PM-3.png"
+ },
+ {
+  "slug": "arch-star-sd04",
+  "name": "Marmo Arch Star Pattern",
+  "ref": "SD04",
+  "collection": "Special Design Features",
+  "family": "",
+  "surface": "Geometric star relief",
+  "format": "Single-arch panel",
+  "hex": "#c8af93",
+  "tone": "light",
+  "desc": "A single pointed-arch portal panel carrying an interlaced star geometry across the spandrels, set within a raised border. Tone on the rendered sample: warm cream.",
+  "source": "special/ChatGPT Image Oct 3, 2026, 11_41_58 PM-4.png"
+ },
+ {
+  "slug": "pilaster-sd05",
+  "name": "Marmo Pilaster",
+  "ref": "SD05",
+  "collection": "Special Design Features",
+  "family": "",
+  "surface": "Recessed panel",
+  "format": "Pilaster",
+  "hex": "#dac5aa",
+  "tone": "light",
+  "desc": "A square pilaster on a stepped plinth, each face relieved by a recessed panel with notched corners. Tone on the rendered sample: pale cream.",
+  "source": "special/ChatGPT Image Oct 3, 2026, 11_41_59 PM-5.png"
+ },
+ {
+  "slug": "frieze-lattice-sd06",
+  "name": "Marmo Frieze Lattice",
+  "ref": "SD06",
+  "collection": "Special Design Features",
+  "family": "",
+  "surface": "Carved lattice band",
+  "format": "Frieze panel",
+  "hex": "#cab69f",
+  "tone": "light",
+  "desc": "A frieze panel with a framed band of interlaced lattice above a plain field and a projecting base moulding. Tone on the rendered sample: pale sand.",
+  "source": "special/ChatGPT Image Oct 3, 2026, 11_42_00 PM-6.png"
+ },
+ {
+  "slug": "corniche-c01",
+  "name": "Marmo Corniche C01",
+  "ref": "C01",
+  "collection": "Special Design Features",
+  "family": "",
+  "surface": "Carved profile",
+  "format": "Moulded profile",
+  "hex": "#ccb292",
+  "tone": "light",
+  "desc": "A hollow-cast cornice length with a stepped, rolled profile, run as a corniche or string course. Tone on the rendered sample: warm cream.",
+  "source": "special/ChatGPT Image Oct 3, 2026, 11_42_01 PM-7.png"
+ },
+ {
+  "slug": "calligraphy-panel-sd08",
+  "name": "Marmo Calligraphy Panel",
+  "ref": "SD08",
+  "collection": "Special Design Features",
+  "family": "",
+  "surface": "Carved calligraphy",
+  "format": "Panel with corbel",
+  "hex": "#c9ad93",
+  "tone": "light",
+  "desc": "A framed panel carved with Arabic calligraphy in relief, carried on a moulded corbel with a fluted shell motif. Tone on the rendered sample: warm cream.",
+  "source": "special/ChatGPT Image Oct 3, 2026, 11_42_02 PM-8.png"
  }
 ]

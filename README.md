@@ -53,7 +53,7 @@ Swiper, Lenis. No framework, no backend, no build-time content system.
 │   ├── projects/         thumb.webp + 01-04.webp per built project (a few
 │   │                     carry three gallery images, not four)
 │   ├── visualiser/       building photo, greyscale surface and façade mask
-│   ├── finishes/         the 64-finish collection, one 760x950 card each
+│   ├── finishes/         the 72-finish collection, one 760x950 card each
 │   │   ├── tile/         512px seamless tiles (only the 20 the visualiser offers)
 │   │   ├── swatch/       180px thumbnails for the swatch buttons
 │   │   └── _catalogue.json  generated index: name, reference, collection,
@@ -191,8 +191,9 @@ preselects the enquiry type and prefills the finish.
 
 ## The collection
 
-The 64 finishes on `collections.html` are the client's own catalogue, built from
-`references/0- Products/`. The five collections, the sub-families under Special
+The 72 finishes on `collections.html` are the client's own catalogue, built from
+`references/0- Products/`; eight more Special Design Features (SD01–SD08 and
+Corniche C01) were added from product renders in `references/special/`. The five collections, the sub-families under Special
 Patterns and every name and reference come from those folders and filenames.
 
 Each description is a family sentence plus a tone measured from the photograph
@@ -214,6 +215,9 @@ durability or recommended use is stated, because none of it is documented.
 - **Project locations** — six records show only "Egypt" because the city is not
   yet confirmed: Al Buhar City, Arab African Bank, Al Aly Al Azaeem Mosque, El Mo'oz Mosque,
   Al Marasem, Medicom. There is a `TODO` comment above the grid listing them.
+- **Special Design Features SD01–SD08 / C01** — the supplied renders had no
+  product names, so the names and `SD` references are descriptive placeholders.
+  Swap in the client's catalogue names and codes when confirmed.
 - **Al Buhar City** — the sector is shown as "Development" and tagged only
   Façade + Custom Elements until the client confirms what the city is (residential,
   hospitality, mixed-use). It is also the homepage's first hero slide.
