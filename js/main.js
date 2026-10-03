@@ -441,15 +441,15 @@ function initContactForm() {
   // Deep links: contact.html?enquiry=sample&finish=Caramel
   const params = new URLSearchParams(location.search)
   if (params.get('enquiry')) setType(params.get('enquiry'))
-  if (params.get('finish')) {
-    const collection = $('#collection', form)
-    const message = $('#message', form)
-    if (collection) collection.value = params.get('finish')
-    if (message && !message.value) message.value = `I would like to request a sample of the ${params.get('finish')} finish.`
-  }
+  const finishInput = $('#finish', form)
+  if (finishInput && params.get('finish')) finishInput.value = params.get('finish')
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
+    if (!form.checkValidity()) {
+      form.reportValidity()
+      return
+    }
     status.dataset.state = ''
     status.textContent = 'Sending…'
 

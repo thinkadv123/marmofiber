@@ -39,7 +39,7 @@
   .collection-panel:nth-child(2n) { border-right: 0; }
   .collection-panel { border-bottom: 1px solid var(--line); aspect-ratio: 3 / 3.6; }
   .project-detail__facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .benefit { grid-template-columns: 90px minmax(0, 3fr) minmax(0, 4fr); }
+  .benefit { grid-template-columns: 112px minmax(0, 3fr) minmax(0, 4fr); }
 }
 
 /* --------------------------------------- ≤ 1080px — navigation collapses */
@@ -166,7 +166,7 @@
   .project-tile:nth-child(4n + 3) { margin-top: 0; }
   .project-detail__gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-  .benefit { grid-template-columns: 72px minmax(0, 1fr); row-gap: 0.6rem; }
+  .benefit { grid-template-columns: 92px minmax(0, 1fr); row-gap: 0.6rem; }
   .benefit__copy { grid-column: 2; }
 
   .form-grid { grid-template-columns: 1fr; }

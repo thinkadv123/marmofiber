@@ -98,7 +98,7 @@
       <div class="shell">
         <div class="grid-12">
           <div class="col-7">
-            <p class="section-number" data-reveal>02 — Project Details</p>
+            <p class="section-number" data-reveal>02 — Your Details</p>
             <h2 class="h-2 mt-3 mb-6" data-reveal data-reveal-delay="0.05">Tell us about the project.</h2>
 
             <!--
@@ -115,23 +115,16 @@
             <form id="enquiry-form" novalidate>
               <input type="hidden" id="enquiry-type" name="enquiry-type" value="sample" />
 
+              <input type="hidden" id="finish" name="finish" value="" />
+
               <div class="form-grid">
                 <div class="field">
-                  <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+                  <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
                   <input type="text" id="name" name="name" autocomplete="name" required placeholder="Your name" />
                 </div>
                 <div class="field">
-                  <label for="company">Company</label>
-                  <input type="text" id="company" name="company" autocomplete="organization" placeholder="Practice, contractor or developer" />
-                </div>
-
-                <div class="field">
-                  <label for="role">Job title</label>
-                  <input type="text" id="role" name="role" autocomplete="organization-title" placeholder="Architect, specifier, procurement…" />
-                </div>
-                <div class="field">
                   <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-                  <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@practice.com" />
+                  <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@company.com" />
                 </div>
 
                 <div class="field">
@@ -139,101 +132,8 @@
                   <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+20 …" />
                 </div>
                 <div class="field">
-                  <label for="country">Country</label>
-                  <input type="text" id="country" name="country" autocomplete="country-name" placeholder="Country" />
-                </div>
-
-                <div class="field">
-                  <label for="city">City</label>
-                  <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="City" />
-                </div>
-                <div class="field">
-                  <label for="project-name">Project name</label>
-                  <input type="text" id="project-name" name="project-name" placeholder="Internal reference is fine" />
-                </div>
-
-                <div class="field">
-                  <label for="project-location">Project location</label>
-                  <input type="text" id="project-location" name="project-location" placeholder="City / district" />
-                </div>
-                <div class="field">
-                  <label for="project-type">Project type</label>
-                  <select id="project-type" name="project-type">
-                    <option value="">Select…</option>
-                    <option>Residential</option>
-                    <option>Commercial</option>
-                    <option>Hospitality</option>
-                    <option>Retail</option>
-                    <option>Cultural / Public</option>
-                    <option>Mixed use</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="application">Intended application</label>
-                  <select id="application" name="application">
-                    <option value="">Select…</option>
-                    <option>Building façade</option>
-                    <option>Exterior wall cladding</option>
-                    <option>Interior feature wall</option>
-                    <option>Entrance / reception</option>
-                    <option>Retail or hospitality interior</option>
-                    <option>Custom architectural element</option>
-                    <option>Not decided yet</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="area">Approximate area</label>
-                  <input type="text" id="area" name="area" placeholder="e.g. 400 m² (approximate is fine)" />
-                </div>
-
-                <div class="field">
-                  <label for="collection">Required collection or finish</label>
-                  <input type="text" id="collection" name="collection" placeholder="e.g. Rough R03, or Marmo Vetrine Greige" />
-                </div>
-                <div class="field">
-                  <label for="stage">Current project stage</label>
-                  <select id="stage" name="stage">
-                    <option value="">Select…</option>
-                    <option>Concept design</option>
-                    <option>Schematic design</option>
-                    <option>Detailed design</option>
-                    <option>Tender</option>
-                    <option>Under construction</option>
-                    <option>Research only</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="timeline">Expected timeline</label>
-                  <select id="timeline" name="timeline">
-                    <option value="">Select…</option>
-                    <option>Within 1 month</option>
-                    <option>1–3 months</option>
-                    <option>3–6 months</option>
-                    <option>6–12 months</option>
-                    <option>Not yet defined</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="upload">Attach a drawing or reference</label>
-                  <input type="file" id="upload" name="upload" accept=".pdf,.jpg,.jpeg,.png,.dwg,.zip" />
-                </div>
-
-                <div class="field field--full">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" placeholder="Tell us what the surface has to do."></textarea>
-                </div>
-
-                <div class="field field--full">
-                  <label id="contact-pref-label">Preferred contact method</label>
-                  <div class="radio-row" role="radiogroup" aria-labelledby="contact-pref-label">
-                    <label class="radio-chip"><input type="radio" name="contact-method" value="Email" checked /><span>Email</span></label>
-                    <label class="radio-chip"><input type="radio" name="contact-method" value="Phone" /><span>Phone</span></label>
-                    <label class="radio-chip"><input type="radio" name="contact-method" value="WhatsApp" /><span>WhatsApp</span></label>
-                    <label class="radio-chip"><input type="radio" name="contact-method" value="In-person meeting" /><span>Meeting</span></label>
-                  </div>
+                  <label for="company">Company name</label>
+                  <input type="text" id="company" name="company" autocomplete="organization" placeholder="Practice, contractor or developer" />
                 </div>
               </div>
 
@@ -241,7 +141,7 @@
 
               <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center">
                 <button class="btn btn--accent" type="submit" data-magnetic="0.2">
-                  Send Enquiry
+                  Submit
                   <svg viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor"/></svg>
                 </button>
                 <p class="form-note" style="max-width:38ch;margin:0">We use these details only to respond to your enquiry.</p>
