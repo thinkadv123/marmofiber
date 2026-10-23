@@ -1325,14 +1325,16 @@ body.nav-open { overflow: hidden; }
 /* Collections preview grid */
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* The first column also carries the width of the fixed rail it sits under,
+     so all seven panels keep the same usable width. */
+  grid-template-columns: calc((100% - var(--rail)) / 7 + var(--rail)) repeat(6, minmax(0, 1fr));
   border-top: 1px solid var(--line);
 }
 
 .collection-panel {
   position: relative;
   display: block;
-  aspect-ratio: 3 / 4.4;
+  aspect-ratio: 3 / 5.2;
   overflow: hidden;
   border-right: 1px solid var(--line);
   isolation: isolate;
@@ -1343,6 +1345,11 @@ body.nav-open { overflow: hidden; }
 /* The first panel sits under the fixed rail on desktop — pad it clear. */
 .collection-grid.full-bleed > :first-child .collection-panel__body {
   padding-left: calc(var(--rail) + clamp(1.25rem, 2vw, 2rem));
+}
+
+/* …and, being wider, it takes its height from the row, not its own aspect. */
+@media (min-width: 1281px) {
+  .collection-grid.full-bleed > :first-child { aspect-ratio: auto; }
 }
 
 .collection-panel img {
@@ -1661,7 +1668,7 @@ body.nav-open { overflow: hidden; }
 .filter-count { font-family: var(--font-condensed); font-size: 0.75rem; letter-spacing: 0.2em; color: var(--medium-grey); margin-left: auto; }
 .filter-count b { color: var(--white); }
 
-/* Finishes: a sticky collections rail beside the grid. Seventy-two cards are
+/* Finishes: a sticky collections rail beside the grid. Eighty-six cards are
    too many for a row of chips, so the categories get their own column. */
 .finishes-layout {
   display: grid;

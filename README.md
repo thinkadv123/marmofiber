@@ -53,7 +53,7 @@ Swiper, Lenis. No framework, no backend, no build-time content system.
 │   ├── projects/         thumb.webp + 01-04.webp per built project (a few
 │   │                     carry three gallery images, not four)
 │   ├── visualiser/       building photo, greyscale surface and façade mask
-│   ├── finishes/         the 72-finish collection, one 760x950 card each
+│   ├── finishes/         the 86-finish collection, one 760x950 card each
 │   │   ├── tile/         512px seamless tiles (only the 20 the visualiser offers)
 │   │   ├── swatch/       180px thumbnails for the swatch buttons
 │   │   └── _catalogue.json  generated index: name, reference, collection,
@@ -191,9 +191,13 @@ preselects the enquiry type and prefills the finish.
 
 ## The collection
 
-The 72 finishes on `collections.html` are the client's own catalogue, built from
+The 86 finishes on `collections.html` are the client's own catalogue, built from
 `references/0- Products/`; eight more Special Design Features (SD01–SD08 and
-Corniche C01) were added from product renders in `references/special/`. The five collections, the sub-families under Special
+Corniche C01) were added from product renders in `references/special/`, and
+fourteen more (Carro Rough CR08–CR12, Marmo Vetrine Nude Brown, and the new
+Marmo and Dotted collections) from `references/pattern 02/`. Those are studio
+shots of whole panels, so each card is cropped inside the panel and written at
+native size, never upscaled. The seven collections, the sub-families under Special
 Patterns and every name and reference come from those folders and filenames.
 
 Each description is a family sentence plus a tone measured from the photograph
@@ -213,14 +217,14 @@ durability or recommended use is stated, because none of it is documented.
 - **Technical PDFs** in `public/assets/documents/` — every file is a marked
   placeholder. See the README in that folder.
 - **Project locations** — six records show only "Egypt" because the city is not
-  yet confirmed: Al Buhar City, Arab African Bank, Al Aly Al Azaeem Mosque, El Mo'oz Mosque,
+  yet confirmed: Heritage Mixed Use Project, Arab African Bank, Al Aly Al Azaeem Mosque, El Mo'oz Mosque,
   Al Marasem, Medicom. There is a `TODO` comment above the grid listing them.
 - **Special Design Features SD01–SD08 / C01** — the supplied renders had no
   product names, so the names and `SD` references are descriptive placeholders.
   Swap in the client's catalogue names and codes when confirmed.
-- **Al Buhar City** — the sector is shown as "Development" and tagged only
-  Façade + Custom Elements until the client confirms what the city is (residential,
-  hospitality, mixed-use). It is also the homepage's first hero slide.
+- **Heritage Mixed Use Project** — shown as "Mixed Use" and tagged only
+  Façade + Custom Elements (there is no Mixed Use filter). It is also the
+  homepage's first hero slide and the Building Façades image.
 - **Egyptian Parliament, Masjid Misr El Kebeer and The Octagon** — the supplied
   photography is press and web imagery of varying resolution, not a commissioned
   shoot. Two gallery frames are under 600px wide and will look soft in the

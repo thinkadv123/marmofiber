@@ -37,6 +37,8 @@
   .enquiry-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .collection-grid { grid-template-columns: repeat(2, 1fr); }
   .collection-panel:nth-child(2n) { border-right: 0; }
+  /* seven panels on a two-column grid: the last one runs full width */
+  .collection-panel:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 6 / 3.6; }
   .collection-panel { border-bottom: 1px solid var(--line); aspect-ratio: 3 / 3.6; }
   .project-detail__facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .benefit { grid-template-columns: 112px minmax(0, 3fr) minmax(0, 4fr); }
